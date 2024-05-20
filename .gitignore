@@ -13,3 +13,4 @@ backend/bin/webserver/WebServerRouteHandler.class
 backend/bin/webserver/WebServerRouteNotFoundException.class
 backend/bin/webserver/WebServerRouter.class
 backend/bin/webserver/WebServerSSE.class
+backend/bin/controllers/ProductsController.class
