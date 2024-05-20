@@ -10,7 +10,8 @@ import webserver.WebServerResponse;
 public class ProductsController {
     public static ArrayList<Product> findAll(WebServerContext context){
         WebServerResponse response = context.getResponse();
-        response.ok("Tous les produits");
+        ProductsDAO productDAO = new ProductsDAO();
+        response.json(productDAO.findAll());
         return null;
     }
 }
