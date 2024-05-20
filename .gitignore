@@ -1,0 +1,4 @@
+backend/.vscode/settings.json
+backend/bin/App.class
+backend/bin/database/MySQLDatabase.class
+backend/bin/database/PolyBayDatabase.class
