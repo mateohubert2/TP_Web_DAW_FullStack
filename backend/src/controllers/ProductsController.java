@@ -12,6 +12,6 @@ public class ProductsController {
         WebServerResponse response = context.getResponse();
         ProductsDAO productDAO = new ProductsDAO();
         response.json(productDAO.findAll());
-        return null;
+        return productDAO.findAll();
     }
 }
