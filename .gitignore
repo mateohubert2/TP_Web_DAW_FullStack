@@ -4,3 +4,12 @@ backend/bin/database/MySQLDatabase.class
 backend/bin/database/PolyBayDatabase.class
 backend/bin/models/Product.class
 backend/bin/dao/ProductsDAO.class
+backend/bin/webserver/WebServer.class
+backend/bin/webserver/WebServerContext.class
+backend/bin/webserver/WebServerRequest.class
+backend/bin/webserver/WebServerResponse.class
+backend/bin/webserver/WebServerRoute.class
+backend/bin/webserver/WebServerRouteHandler.class
+backend/bin/webserver/WebServerRouteNotFoundException.class
+backend/bin/webserver/WebServerRouter.class
+backend/bin/webserver/WebServerSSE.class

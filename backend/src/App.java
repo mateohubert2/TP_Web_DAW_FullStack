@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import dao.ProductsDAO;
 import models.Product;
+import webserver.WebServer;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -13,5 +14,7 @@ public class App {
             System.out.println("Le produit ayant pour id: " + allProduct.get(i).id() + " est: " + allProduct.get(i).name() + " possédé par: "
             + allProduct.get(i).owner() + " et coute: " + allProduct.get(i).bid() + "€");
        }
+       WebServer webserver = new WebServer();
+       webserver.listen(8080);
     }
 }
