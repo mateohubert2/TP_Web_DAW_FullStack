@@ -22,11 +22,11 @@ export class ProductsView {
         let button_div = document.createElement("div");
         products.style = "display: flex; justify-content : space-between;";
         let temp_enfant_name = document.createElement("div");
-        temp_enfant_name.style = "align-items: center;";
+        //temp_enfant_name.style = "align-items: center;";
         let temp_enfant_owner = document.createElement("div");
-        temp_enfant_owner.style = "align-items: center;";
+        //temp_enfant_owner.style = "align-items: center;";
         let temp_enfant_bid = document.createElement("div");
-        temp_enfant_bid.style = "align-items: center;";
+        //temp_enfant_bid.style = "align-items: center;";
         let temp_enfant_button = document.createElement("div");
         temp_enfant_button.style = "display: grid;";
         for(let i = 0; i < data.length; i++){
@@ -35,7 +35,7 @@ export class ProductsView {
             let temp_owner = document.createElement("div");
             temp_owner.innerHTML = data[i].owner;
             let temp_bid = document.createElement("div");
-            temp_bid.innerHTML = data[i].bid;
+            temp_bid.innerHTML = data[i].bid + " €";
             let temp_button = document.createElement("button");
             temp_button.innerHTML = "encherir";
             temp_enfant_name.appendChild(temp_name);
