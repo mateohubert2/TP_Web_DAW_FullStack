@@ -22,11 +22,8 @@ export class ProductsView {
         let button_div = document.createElement("div");
         products.style = "display: flex; justify-content : space-between;";
         let temp_enfant_name = document.createElement("div");
-        //temp_enfant_name.style = "align-items: center;";
         let temp_enfant_owner = document.createElement("div");
-        //temp_enfant_owner.style = "align-items: center;";
         let temp_enfant_bid = document.createElement("div");
-        //temp_enfant_bid.style = "align-items: center;";
         let temp_enfant_button = document.createElement("div");
         temp_enfant_button.style = "display: grid;";
         for(let i = 0; i < data.length; i++){

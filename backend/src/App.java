@@ -19,6 +19,6 @@ public class App {
        WebServer webserver = new WebServer();
        webserver.listen(8080);
        webserver.getRouter().get("/products", (WebServerContext context) -> { ProductsController.findAll(context);});
-       webserver.getRouter().post("/bid", (WebServerContext context) -> { ProductsController.bid(1, context);});
+       webserver.getRouter().post("/bid/:productId", (WebServerContext context) -> { ProductsController.bid(context);});
     }
 }
