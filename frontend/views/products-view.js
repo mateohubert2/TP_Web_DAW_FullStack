@@ -6,7 +6,7 @@ export class ProductsView {
     }
     displayProducts(){
         const productsService = new ProductsService();
-        productsService.findAll().then((data) => {
+        ProductsService.findAll().then((data) => {
         if (data) {
             this.#displayProduct(data);
         }
@@ -34,6 +34,16 @@ export class ProductsView {
             let temp_bid = document.createElement("div");
             temp_bid.innerHTML = data[i].bid + " €";
             let temp_button = document.createElement("button");
+            temp_button.dataset.id = data[i].id;
+            temp_button.addEventListener("click", ()=>{
+                const temp = document.querySelector("button");
+                let id = temp_button.dataset.id;
+                ProductsService.bid(id).then(()=>{
+                    location.reload();
+                }).catch(error => {
+                    console.log("Vous ne pouvez pas encherir");
+                })
+            });
             temp_button.innerHTML = "encherir";
             temp_enfant_name.appendChild(temp_name);
             temp_enfant_owner.appendChild(temp_owner);

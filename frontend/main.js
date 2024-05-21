@@ -3,7 +3,7 @@ import { ProductsView } from "./views/products-view.js";
 
 function run(){
     const productView = new ProductsView;
-    productView.displayProducts();
+    productView.displayProducts();  
 }
 
 window.addEventListener("load", run);
