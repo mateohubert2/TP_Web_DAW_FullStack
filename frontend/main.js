@@ -1,14 +1,9 @@
 import { ProductsService } from "./services/products-service.js";
+import { ProductsView } from "./views/products-view.js";
 
 function run(){
-    const productsService = new ProductsService();
-    productsService.findAll().then((data) => {
-        if (data) {
-            console.log("Tous les produits:", data);
-        }
-    }).catch(error => {
-        console.log("Aucun produit trouvé", error);
-    });
+    const productView = new ProductsView;
+    productView.displayProducts();
 }
 
 window.addEventListener("load", run);
