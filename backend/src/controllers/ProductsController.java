@@ -15,23 +15,28 @@ public class ProductsController {
         response.json(productDAO.findAll());
         return productDAO.findAll();
     }
-    public static void bid(WebServerContext context){
+    public static boolean bid(WebServerContext context){
         ProductsDAO productDAO = new ProductsDAO();
-        boolean result;
+        String result;
         WebServerRequest request = context.getRequest();
         String parametre = request.getParam("productId");
         try {
             result = productDAO.bid(Integer.parseInt(parametre));
         } catch (Exception e) {
             System.err.println(e.getMessage());
-            result = false;
+            result = null;
         }
         WebServerResponse response = context.getResponse();
-        if(result){
-            response.ok("Le prix à bien été incrémenté");
+        if(result != "null"){
+            //response.ok("Le prix à bien été incrémenté");
+            String jsonString = "{\"bid\":\""+result+"\"}";
+            //System.out.println(jsonString);
+            response.json(jsonString);
+            return true;
         }
         else{
             response.serverError("Impossible de modifier le prix");
+            return false;
         }
     }
 }

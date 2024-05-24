@@ -36,10 +36,11 @@ export class ProductsView {
             let temp_button = document.createElement("button");
             temp_button.dataset.id = data[i].id;
             temp_button.addEventListener("click", ()=>{
-                const temp = document.querySelector("button");
-                let id = temp_button.dataset.id;
-                ProductsService.bid(id).then(()=>{
-                    location.reload();
+                const id = temp_button.dataset.id;
+                ProductsService.bid(id).then((data2)=>{
+                    const current_temp_bid = temp_bid;
+                    data2 = JSON.parse(data2);
+                    current_temp_bid.innerHTML = data2.bid;
                 }).catch(error => {
                     console.log("Vous ne pouvez pas encherir");
                 })

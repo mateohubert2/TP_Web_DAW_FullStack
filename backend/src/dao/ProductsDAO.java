@@ -46,7 +46,7 @@ public class ProductsDAO {
         }
         return products;
     }
-    public boolean bid(int id){
+    public String bid(int id){
         PolyBayDatabase poly_bay;
         boolean result;
         try {
@@ -138,10 +138,11 @@ public class ProductsDAO {
         float requete_valide = bid_after - bid_precedent;
         if(requete_valide == 50){
             result = true;
+            return Float.toString(bid_after);
         }
         else{
             result = false;
+            return null;
         }
-        return result;
     }
 }

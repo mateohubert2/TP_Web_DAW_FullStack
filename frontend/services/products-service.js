@@ -9,7 +9,8 @@ export class ProductsService {
     static async bid(id){
         const response = await fetch("http://localhost:8080/bid/"+id, {method: "POST"});
         if(response.status === 200){
-            return true;
+            const data2 = await response.json();
+            return data2;
         }
         else{
             return false;
