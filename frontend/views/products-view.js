@@ -40,7 +40,7 @@ export class ProductsView {
                 ProductsService.bid(id).then((data2)=>{
                     const current_temp_bid = temp_bid;
                     data2 = JSON.parse(data2);
-                    current_temp_bid.innerHTML = data2.bid;
+                    current_temp_bid.innerHTML = data2.bid + " €";
                 }).catch(error => {
                     console.log("Vous ne pouvez pas encherir");
                 })
