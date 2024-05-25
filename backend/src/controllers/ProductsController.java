@@ -28,10 +28,10 @@ public class ProductsController {
         }
         WebServerResponse response = context.getResponse();
         if(result != "null"){
-            //response.ok("Le prix à bien été incrémenté");
-            String jsonString = "{\"bid\":\""+result+"\"}";
-            //System.out.println(jsonString);
-            response.json(jsonString);
+            String jsonString = "{\"id\":"+parametre+",\"bid\":\""+result+"\"}";
+            context.getSSE().emit("bids", jsonString);
+            //response.json(jsonString);
+            response.ok("Prix maj");
             return true;
         }
         else{

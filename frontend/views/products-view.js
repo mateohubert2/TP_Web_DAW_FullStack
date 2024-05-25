@@ -33,17 +33,12 @@ export class ProductsView {
             temp_owner.innerHTML = data[i].owner;
             let temp_bid = document.createElement("div");
             temp_bid.innerHTML = data[i].bid + " €";
+            temp_bid.dataset.id = data[i].id;
             let temp_button = document.createElement("button");
             temp_button.dataset.id = data[i].id;
             temp_button.addEventListener("click", ()=>{
                 const id = temp_button.dataset.id;
-                ProductsService.bid(id).then((data2)=>{
-                    const current_temp_bid = temp_bid;
-                    data2 = JSON.parse(data2);
-                    current_temp_bid.innerHTML = data2.bid + " €";
-                }).catch(error => {
-                    console.log("Vous ne pouvez pas encherir");
-                })
+                ProductsService.bid(id)
             });
             temp_button.innerHTML = "encherir";
             temp_enfant_name.appendChild(temp_name);
@@ -55,18 +50,13 @@ export class ProductsView {
         products.appendChild(temp_enfant_owner);
         products.appendChild(temp_enfant_bid);
         products.appendChild(temp_enfant_button);
-        /*let name = document.createElement("div");
-        name.innerHTML = data.name;
-        let owner = document.createElement("div");
-        owner.innerHTML = data.owner;
-        let bid = document.createElement("div");
-        bid.innerHTML = data.bid;
-        let encherir = document.createElement("button");
-        encherir.innerHTML = "encherir";
-        enfant.appendChild(name);
-        enfant.appendChild(owner);
-        enfant.appendChild(bid);
-        enfant.appendChild(encherir);
-        products.appendChild(enfant);*/
+    }
+    updateBid(data){
+        const bid = document.querySelectorAll("div");
+        for(let i = 0; i < bid.length; i++){
+            if(bid[i].dataset.id == data.id){
+                bid[i].innerHTML = data.bid + " €";
+            }
+        }
     }
 }
